@@ -61,7 +61,7 @@ public class FragmentInjectionTest {
     }
 
 
-    @Test(expected = NullPointerException.class)
+    @Test(expected = java.lang.VerifyError.class)
     public void shouldNotBeAbleToInjectFragmentViewsIntoActivity() {
         Robolectric.buildActivity(ActivityC.class).create().start().resume().get();
     }
