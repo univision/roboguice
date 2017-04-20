@@ -36,7 +36,7 @@
 		<java.version>1.6</java.version>
 
 		<!-- PLUGINS -->
-		<android-maven-plugin.version>3.8.2</android-maven-plugin.version>
+		<android-maven-plugin.version>3.9.0-rc.2</android-maven-plugin.version>
 		<maven-compiler-plugin.version>3.1</maven-compiler-plugin.version>
 		<lifecycle-mapping-plugin.version>1.0.0</lifecycle-mapping-plugin.version>
 		<maven-pmd-plugin.version>3.0.1</maven-pmd-plugin.version>
@@ -49,13 +49,13 @@
 		<!-- LIBRARIES -->
 		<android-platform.version>4.1.1.4</android-platform.version>
 		<android-map.version>7_r1</android-map.version>
-		<android-build.version>19</android-build.version>
+		<android-build.version>23</android-build.version>
 		<guice.version>4.0-blender-SNAPSHOT</guice.version>
 
 		<!--LIBRARIES -->
 		<android-map.version>7_r1</android-map.version>
-		<android-support-v4.version>19</android-support-v4.version>
-		<android-appcompat-v7.version>19</android-appcompat-v7.version>
+		<android-support-v4.version>23.1.1</android-support-v4.version>
+		<android-appcompat-v7.version>23.1.1</android-appcompat-v7.version>
 		<actionbarsherlock.version>4.2.0</actionbarsherlock.version>
 		<jsr305.version>2.0.3</jsr305.version>
 		<findbugs-annotations.version>1.0.0</findbugs-annotations.version>
@@ -185,20 +185,7 @@
 						</execution>
 					</executions>
 				</plugin>
-				<plugin>
-					<groupId>org.codehaus.mojo</groupId>
-					<artifactId>findbugs-maven-plugin</artifactId>
-					<version>${findbugs-maven-plugin.version}</version>
-					<executions>
-						<execution>
-							<id>findbugs-check</id>
-							<phase>verify</phase>
-							<goals>
-								<goal>check</goal>
-							</goals>
-						</execution>
-					</executions>
-				</plugin>
+
 				<plugin>
 					<groupId>org.jacoco</groupId>
 					<artifactId>jacoco-maven-plugin</artifactId>
@@ -334,7 +321,6 @@
 				<module>roboblender</module>
 				<module>roboguice</module>
 				<module>additional-tests</module>
-				<module>astroboy</module>
 			</modules>
 		</profile>
 	</profiles>

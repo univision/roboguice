@@ -15,18 +15,18 @@
  */
 package roboguice.activity;
 
-import java.util.HashMap;
-import java.util.Map;
-
+import android.app.Activity;
+import android.content.Context;
+import android.content.Intent;
+import android.content.res.Configuration;
+import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
+import android.util.AttributeSet;
+import android.view.View;
+import com.google.inject.Inject;
+import com.google.inject.Key;
 import roboguice.RoboGuice;
-import roboguice.activity.event.OnActivityResultEvent;
-import roboguice.activity.event.OnContentChangedEvent;
-import roboguice.activity.event.OnNewIntentEvent;
-import roboguice.activity.event.OnPauseEvent;
-import roboguice.activity.event.OnRestartEvent;
-import roboguice.activity.event.OnResumeEvent;
-import roboguice.activity.event.OnSaveInstanceStateEvent;
-import roboguice.activity.event.OnStopEvent;
+import roboguice.activity.event.*;
 import roboguice.context.event.OnConfigurationChangedEvent;
 import roboguice.context.event.OnCreateEvent;
 import roboguice.context.event.OnDestroyEvent;
@@ -36,17 +36,8 @@ import roboguice.inject.ContentViewListener;
 import roboguice.inject.RoboInjector;
 import roboguice.util.RoboContext;
 
-import com.google.inject.Inject;
-import com.google.inject.Key;
-
-import android.app.Activity;
-import android.content.Context;
-import android.content.Intent;
-import android.content.res.Configuration;
-import android.os.Bundle;
-import android.support.v7.app.ActionBarActivity;
-import android.util.AttributeSet;
-import android.view.View;
+import java.util.HashMap;
+import java.util.Map;
 
 /**
  * A {@link RoboActivity} extends from {@link Activity} to provide dynamic
@@ -74,7 +65,7 @@ import android.view.View;
  *
  * @author Mike Burton
  */
-public class RoboActionBarActivity extends ActionBarActivity implements RoboContext {
+public class RoboActionBarActivity extends AppCompatActivity implements RoboContext {
     protected EventManager eventManager;
     protected HashMap<Key<?>,Object> scopedObjects = new HashMap<Key<?>, Object>();
 
